@@ -1,8 +1,11 @@
 version: "3"
 services:
   k6:
+    container_name: k6
     image: grafana/k6:master-with-browser
+    env_file:
+      - .env
     volumes:
       - ./:/scripts
     working_dir: /scripts
-    command:
+    command: run -e URL=${URL}  --vus ${VUS} --duration ${DURATION}s script.js
