@@ -14,7 +14,7 @@ if [ ! -d "$FOLDER" ]; then
 fi
 
 
-docker-compose up >> $FOLDER/log-$DATE.txt 2>&1
+docker-compose up  >> $FOLDER/log-$DATE.txt 
 
 echo "Testing finished at $DATE" >> $FOLDER/log-$DATE.txt
 
